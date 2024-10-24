@@ -1,0 +1,143 @@
+# TODO: TASK_1_1
+values = np.arange(-8, 8.25, 0.25)
+optimal_params = None
+max_accuracy = 0
+n_iterations = 1000000
+
+for i in range(n_iterations):
+    w1, w2, b = np.random.choice(values, 3)
+
+    model.W[:, 0] = [w1, w2]
+    model.b[:] = [b]
+
+    y_pred = model.forward(x)
+    accuracy = np.mean(y == y_pred) * 100
+    print(f'Iteration {i+1}: Current accuracy: {accuracy}% for parameters: {w1, w2, b}')
+    if accuracy > max_accuracy:
+        max_accuracy = accuracy
+        optimal_params = (w1, w2, b)
+    if accuracy == 100:
+        break
+
+print(f'Optimal parameters: {optimal_params}')
+print(f'Maximum accuracy: {max_accuracy}%')
+
+
+    #model.W[:, 0] = [-3, 7.5]
+    #model.b[:] = [-6]
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+# TODO: TASK_1_2
+values = np.arange(-1, 3, 0.25)
+    optimal_params = None
+    max_accuracy = 0
+    n_iterations = 1000000
+
+    for i in range(n_iterations):
+        # Randomly select the parameters
+        w_h1_1, w_h1_2, w_h2_1, w_h2_2, b_h1, b_h2, w_o_1, w_o_2, b_o = np.random.choice(values, 9)
+
+        model.hidden_layer.W[:, 0] = [w_h1_1, w_h1_2]
+        model.hidden_layer.W[:, 1] = [w_h2_1, w_h2_2]
+        model.hidden_layer.b[:] = [b_h1, b_h2]
+        model.output_layer.W[:, 0] = [w_o_1, w_o_2]
+        model.output_layer.b[:] = [b_o]
+
+        y_pred = model.forward(x)
+        accuracy = np.mean(y == y_pred) * 100
+        print(
+            f'Iteration {i + 1}: Current accuracy: {accuracy}% for parameters: {w_h1_1, w_h1_2, w_h2_1, w_h2_2, b_h1, b_h2, w_o_1, w_o_2, b_o}')
+        if accuracy > max_accuracy:
+            max_accuracy = accuracy
+            optimal_params = (w_h1_1, w_h1_2, w_h2_1, w_h2_2, b_h1, b_h2, w_o_1, w_o_2, b_o)
+        if accuracy == 100:
+            break
+    print(f'Optimal parameters: {optimal_params}')
+    print(f'Maximum accuracy: {max_accuracy}%')
+
+  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+    model.hidden_layer.W[:, 0] = [-3, 1]  # Wagi neuronu h1
+    model.hidden_layer.W[:, 1] = [1, -0.35]  # Wagi neuronu h2
+    model.hidden_layer.b[:] = [-0.5, -0.5]  # Biasy neuronów h1 i h2
+    model.output_layer.W[:, 0] = [1, 1]  # Wagi neuronu wyjściowego
+    model.output_layer.b[:] = [-0.2]  # Bias neuronu wyjściowego
+
+    # TODO: TASK_2_1
+
+    Learning rate: 0.00, Train accuracy: 97.62%, Test accuracy: 93.00%
+Learning rate: 0.01, Train accuracy: 98.50%, Test accuracy: 92.50%
+Learning rate: 0.02, Train accuracy: 98.88%, Test accuracy: 93.50%
+Learning rate: 0.03, Train accuracy: 98.25%, Test accuracy: 92.50%
+Learning rate: 0.04, Train accuracy: 98.75%, Test accuracy: 91.50%
+Learning rate: 0.05, Train accuracy: 98.88%, Test accuracy: 94.00%
+Learning rate: 0.06, Train accuracy: 99.00%, Test accuracy: 93.50%
+Learning rate: 0.07, Train accuracy: 98.75%, Test accuracy: 94.00%
+Learning rate: 0.08, Train accuracy: 99.00%, Test accuracy: 94.00%
+Learning rate: 0.09, Train accuracy: 98.88%, Test accuracy: 93.00%
+    Learning rate: 0.10, Train accuracy: 97.00%, Test accuracy: 95.50%
+Learning rate: 0.11, Train accuracy: 99.25%, Test accuracy: 93.50%
+Learning rate: 0.12, Train accuracy: 98.75%, Test accuracy: 92.00%
+Learning rate: 0.13, Train accuracy: 99.25%, Test accuracy: 93.00%
+Learning rate: 0.14, Train accuracy: 99.00%, Test accuracy: 92.50%
+Learning rate: 0.15, Train accuracy: 99.00%, Test accuracy: 92.00%
+Learning rate: 0.16, Train accuracy: 99.38%, Test accuracy: 92.50%
+Learning rate: 0.17, Train accuracy: 95.00%, Test accuracy: 88.50%
+Learning rate: 0.18, Train accuracy: 98.50%, Test accuracy: 91.50%
+Learning rate: 0.19, Train accuracy: 99.12%, Test accuracy: 92.50%
+Learning rate: 0.20, Train accuracy: 99.12%, Test accuracy: 92.00%
+Learning rate: 0.21, Train accuracy: 99.50%, Test accuracy: 92.50%
+Learning rate: 0.22, Train accuracy: 99.25%, Test accuracy: 91.00%
+Learning rate: 0.23, Train accuracy: 98.12%, Test accuracy: 93.50%
+Learning rate: 0.24, Train accuracy: 98.88%, Test accuracy: 90.00%
+Learning rate: 0.25, Train accuracy: 99.38%, Test accuracy: 92.50%
+Learning rate: 0.26, Train accuracy: 99.25%, Test accuracy: 92.00%
+Learning rate: 0.27, Train accuracy: 99.38%, Test accuracy: 92.50%
+Learning rate: 0.28, Train accuracy: 98.12%, Test accuracy: 93.00%
+Learning rate: 0.29, Train accuracy: 99.38%, Test accuracy: 92.00%
+Learning rate: 0.30, Train accuracy: 98.50%, Test accuracy: 93.00%
+Learning rate: 0.31, Train accuracy: 98.12%, Test accuracy: 92.50%
+Learning rate: 0.32, Train accuracy: 98.62%, Test accuracy: 93.50%
+Learning rate: 0.33, Train accuracy: 98.62%, Test accuracy: 91.50%
+Learning rate: 0.34, Train accuracy: 98.50%, Test accuracy: 92.50%
+Learning rate: 0.35, Train accuracy: 98.75%, Test accuracy: 94.00%
+Learning rate: 0.36, Train accuracy: 98.88%, Test accuracy: 92.00%
+Learning rate: 0.37, Train accuracy: 98.88%, Test accuracy: 93.00%
+Learning rate: 0.38, Train accuracy: 98.62%, Test accuracy: 93.00%
+Learning rate: 0.39, Train accuracy: 98.88%, Test accuracy: 92.00%
+Learning rate: 0.40, Train accuracy: 98.75%, Test accuracy: 94.00%
+Learning rate: 0.41, Train accuracy: 98.88%, Test accuracy: 93.00%
+Learning rate: 0.42, Train accuracy: 98.88%, Test accuracy: 92.00%
+Learning rate: 0.43, Train accuracy: 98.50%, Test accuracy: 92.00%
+Learning rate: 0.44, Train accuracy: 98.62%, Test accuracy: 92.50%
+Learning rate: 0.45, Train accuracy: 98.50%, Test accuracy: 94.00%
+Learning rate: 0.46, Train accuracy: 98.62%, Test accuracy: 92.00%
+Learning rate: 0.47, Train accuracy: 98.12%, Test accuracy: 91.00%
+Learning rate: 0.48, Train accuracy: 98.50%, Test accuracy: 92.00%
+Learning rate: 0.49, Train accuracy: 97.50%, Test accuracy: 90.50%
+Learning rate: 0.50, Train accuracy: 98.75%, Test accuracy: 93.00%
+
+test_rate(model, x_train, y_train, x_test, y_test)
+
+def test_rate(model, x_train, y_train, x_test, y_test, start=0.090, end=1.010, step=0.001):
+    for learning_rate in torch.arange(start, end, step):
+        trained_model, _ = training(model, x_train, y_train)
+        train_acc = evaluate_model(trained_model, x_train, y_train) * 100
+        print(f'Learning rate: {learning_rate:.3f}, Train accuracy: {train_acc:.03f}%, Test accuracy: {evaluate_model(trained_model, x_test, y_test) * 100:.03f}%')
+
+
+(52,14)
+np.dot(x_data, self.W): Jest to operacja iloczynu skalarnego między danymi wejściowymi x_data a wagami neuronu self.W.
+Ta operacja jest równoznaczna z sumowaniem produktów odpowiadających sobie wpisów w dwóch sekwencjach liczb.
+
+self.f_act(np.dot(x_data, self.W) + self.b): Wynik operacji iloczynu skalarnego jest następnie dodawany do wartości progowej self.b.
+Otrzymana wartość jest przekazywana do funkcji aktywacji self.f_act. Funkcja aktywacji jest używana do wprowadzenia nieliniowości do wyjścia neuronu.
+Podsumowując, instrukcja return zwraca wynik działania neuronu po zastosowaniu wag do wejść, dodaniu wartości progowej i przekazaniu wyniku do funkcji aktywacji.
+
+
+
+
+
+
+
+
